@@ -51,10 +51,3 @@ This app allows users to create and delete notes — all stored locally in the b
 * Data persists even after refreshing the page
 * Each note can be created, viewed, or deleted instantly
 
-
-
-
-
-
-
-
