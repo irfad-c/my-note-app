@@ -3,7 +3,7 @@
 ````markdown
 # 📝 My Note App
 
-A simple and responsive note-taking web application built using **React**.  
+A simple and responsive note-taking web application built using React 
 This app allows users to create and delete notes — all stored locally in the browser.
 
 
