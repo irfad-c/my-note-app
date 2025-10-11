@@ -36,7 +36,6 @@ This app allows users to create and delete notes — all stored locally in the b
    👉 `http://localhost:3000`
 
 
-
 ## 🧠 How It Works
 
 * Notes are stored in the browser’s **localStorage**
