@@ -1,11 +1,9 @@
 
-
 ````markdown
 # 📝 My Note App
 
 A simple and responsive note-taking web application built using React 
 This app allows users to create and delete notes — all stored locally in the browser.
-
 
 
 ## 🚀 Features
@@ -19,24 +17,18 @@ This app allows users to create and delete notes — all stored locally in the b
 ## 📦 Installation and Setup
 
 1. Clone this repository  
-
    git clone https://github.com/yourusername/my-note-app.git
 
 
 2. Navigate to the project folder
-
-
    cd my-note-app
 
 
 3. Install dependencies
-
-
    npm install
 
 
 4. Start the development server
-
    npm start
 
 
