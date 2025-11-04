@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./style.css";
 
 const Note = () => {
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState([]);
-  const isFirstLoad = useRef(true); // 👈 track if it's first render
+  //track if it's first render
+  const isFirstLoad = useRef(true);
 
-  // Load notes from localStorage on first render
+  //Load notes from localStorage on first render
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
     console.log("Loaded from localStorage - first useEffect:", savedNotes);
@@ -15,7 +17,9 @@ const Note = () => {
   // Save notes to localStorage only after first load
   useEffect(() => {
     if (isFirstLoad.current) {
-      isFirstLoad.current = false; //Fist time if condition will be true.So return function will run and localsStorage.setItem will not work.During the first time itself  isFirstLoad.current become false (That is the work of this function).When we add or delete any note then if condition will be false at the time.So LocalStorage.setItem will run.
+      isFirstLoad.current = false;
+      //Fist time if condition will be true.So return function will run and localsStorage.setItem will not work.
+      // During the first time rendering itself  isFirstLoad.current become false (That is the work of this function).When we add or delete any note then if condition will be false at the time.So LocalStorage.setItem will run.
       return;
     }
     console.log("Saving to localStorage- Second useEffect:", notes);
@@ -25,8 +29,8 @@ const Note = () => {
   const handleAdd = () => {
     if (note.trim() === "") return;
     setNotes([...notes, note]);
-    setNote("");
     //We are adding new note to existing notes.Later we are clearing the input box using setNote('')
+    setNote("");
   };
 
   const handleDelete = (index) => {
@@ -36,28 +40,26 @@ const Note = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h2>📝 React Notes App (localStorage)</h2>
+    <div className="container">
+      <h2 className="heading">📝 React Notes App</h2>
       <input
+        className="input-container"
         type="text"
         value={note}
         placeholder="Write a note..."
-        onChange={(e) => setNote(e.target.value)}
         //e is the event object.e.target is the actual input element.
+        onChange={(e) => setNote(e.target.value)}
       />
-      <button onClick={handleAdd} style={{ marginLeft: "10px" }}>
+      <button onClick={handleAdd} className="btn">
         Add
       </button>
 
-      <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
+      <ul className="ul-style">
         {notes.length === 0 && <p>No notes yet</p>}
         {notes.map((n, i) => (
-          <li key={i} style={{ marginBottom: "10px" }}>
+          <li key={i} className="li-style">
             {n}
-            <button
-              onClick={() => handleDelete(i)}
-              style={{ marginLeft: "10px" }}
-            >
+            <button className="btn-delete" onClick={() => handleDelete(i)}>
               Delete
             </button>
           </li>

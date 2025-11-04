@@ -1,0 +1,100 @@
+/* Reset some default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the whole app */
+.container {
+  max-width: 600px;          /* keeps the app narrow */
+  margin: 50px auto;         /* centers horizontally */
+  padding: 20px;
+  background-color: #1f1f1f; /* dark background */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;        /* centers inline elements like h2, input, buttons */
+  color: #f1f1f1;
+  font-family: Arial, sans-serif;
+}
+
+/* App title */
+.heading {
+  color: #ffcc00;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Input field */
+.input-container {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+/* Add button */
+.btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Notes list */
+.ul-style {
+  list-style-type: none;
+  margin-top: 25px;
+  text-align: left; /* aligns notes to the left for better readability */
+}
+
+/* Individual note item */
+.li-style {
+  background-color: #2b2b2b;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;               /* keeps text and button on same line */
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Delete button */
+.btn-delete {
+  background-color: #e53935;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  background-color: #c62828;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .input-container {
+    width: 70%;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
